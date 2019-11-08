@@ -185,6 +185,11 @@ let set_endline_tactic tac =
   | [] -> raise NoCurrentProof
   | p :: rest -> pstates := { p with endline_tactic = Some tac } :: rest
 
+let get_endline_tactic () =
+  match !pstates with
+  | [] -> raise NoCurrentProof
+  | p :: rest -> p.endline_tactic
+
 (* spiwack: it might be considered to move error messages away.
     Or else to remove special exceptions from Proof_global.
     Arguments for the former: there is no reason Proof_global is only

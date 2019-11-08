@@ -8,6 +8,8 @@
 (*         *     (see LICENSE file for the text of the license)         *)
 (************************************************************************)
 
+val print_loadpath : Names.DirPath.t option -> Pp.t
+
 val dump_global : Libnames.qualid Constrexpr.or_by_notation -> unit
 
 (** Vernacular entries *)

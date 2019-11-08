@@ -29,7 +29,7 @@ open Util
 (** Representation and operations on identifiers. *)
 module Id :
 sig
-  type t
+  type t = string
   (** Values of this type represent (Coq) identifiers. *)
 
   val equal : t -> t -> bool

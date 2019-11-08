@@ -26,6 +26,8 @@ val physical : t -> CUnix.physical_path
 val logical : t -> DirPath.t
 (** Get the logical path (Coq module hierarchy) of a loadpath. *)
 
+val implicit : t -> bool
+
 val get_load_paths : unit -> t list
 (** Get the current loadpath association. *)
 

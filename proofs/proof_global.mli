@@ -121,6 +121,7 @@ val simple_with_current_proof :
 
 (** Sets the tactic to be used when a tactic line is closed with [...] *)
 val set_endline_tactic : Genarg.glob_generic_argument -> unit
+val get_endline_tactic : unit -> Genarg.glob_generic_argument option
 
 (** Sets the section variables assumed by the proof, returns its closure
  * (w.r.t. type dependencies and let-ins covered by it) + a list of

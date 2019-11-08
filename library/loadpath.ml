@@ -28,6 +28,8 @@ let logical p = p.path_logical
 
 let physical p = p.path_physical
 
+let implicit p = p.path_implicit
+
 let get_load_paths () = !load_paths
 
 let anomaly_too_many_paths path =

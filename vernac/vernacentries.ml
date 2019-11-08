@@ -157,7 +157,8 @@ let show_match id =
 let print_path_entry p =
   let dir = DirPath.print (Loadpath.logical p) in
   let path = str (CUnix.escaped_string_of_physical_path (Loadpath.physical p)) in
-  Pp.hov 2 (dir ++ spc () ++ path)
+  let implicit = str (string_of_bool (Loadpath.implicit p)) in
+  Pp.hov 2 (dir ++ spc () ++ path ++ spc() ++ implicit)
 
 let print_loadpath dir =
   let l = Loadpath.get_load_paths () in
@@ -167,7 +168,7 @@ let print_loadpath dir =
     let filter p = is_dirpath_prefix_of dir (Loadpath.logical p) in
     List.filter filter l
   in
-  str "Logical Path / Physical path:" ++ fnl () ++
+  str "Logical Path / Physical path / Implicit:" ++ fnl () ++
     prlist_with_sep fnl print_path_entry l
 
 let print_modules () =
